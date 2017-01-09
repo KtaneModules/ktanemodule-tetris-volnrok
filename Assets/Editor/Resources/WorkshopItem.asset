@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf2299c8864afe4ab42466f546ae20d, type: 3}
+  m_Name: WorkshopItem
+  m_EditorClassIdentifier: 
+  WorkshopPublishedFileID: 750124224
+  Title: Tetris
+  Description: "[i]Chances are you\u2019ve already played many iterations of this
+    game.[/i]\n\n[h1]About[/h1]\nA needy module with a Tetris game. Each time the
+    module activates, you will need to place 3 tetris pieces.\n\n[h1]Manual[/h1]\nA
+    PDF of the manual is included in the download, you can also download here:\nhttps://dl.dropboxusercontent.com/u/59698974/Modules/TetrisManual.pdf\n\n[h1]Module
+    ID[/h1]\nspwizTetris\r\n\r\nThanks to Timwi for help with the manual formatting."
+  PreviewImage: {fileID: 2800000, guid: 343afc5948fbfd7428b94350fc2eaf04, type: 3}
+  Tags:
+  - Needy Module
