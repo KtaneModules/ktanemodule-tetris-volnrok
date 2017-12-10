@@ -13,5 +13,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: spwizTetris
   title: Tetris
-  version: 1.0.0
+  description: "[i]Chances are you\u2019ve already played many iterations of this
+    game.[/i]\r\n\r\n[h1]About[/h1]\r\nA needy module with a Tetris game. Each time
+    the module activates, you will need to place 3 tetris pieces.\r\n\r\n[h1]Manual[/h1]\r\nA
+    PDF of the manual is included in the download, you can also view here:\r\nhttps://ktane.timwi.de/HTML/Tetris.html\r\n\r\n[h1]Module
+    ID[/h1]\r\nspwizTetris\r\n\r\nThanks to Timwi for help with the manual formatting."
+  version: 1.1.0
   outputFolder: build
+  previewImage: {fileID: 2800000, guid: 343afc5948fbfd7428b94350fc2eaf04, type: 3}
