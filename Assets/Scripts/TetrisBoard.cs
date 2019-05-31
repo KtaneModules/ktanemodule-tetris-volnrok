@@ -69,7 +69,7 @@ public class TetrisBoard {
 			}
 		}
 
-		return 8;
+		return h;
 	}
 
 	private void initColumns(int colA, int colB, int height)
