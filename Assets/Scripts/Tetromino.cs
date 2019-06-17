@@ -16,40 +16,40 @@ class TetType {
 public class Tetromino {
 
 	private static int[] S_LEFT_MAP = {
-		0, 0, 0,
 		1, 1, 0,
-		0, 1, 1
+		0, 1, 1,
+		0, 0, 0
 	};
 
 	private static int[] S_RIGHT_MAP = {
-		0, 0, 0,
 		0, 1, 1,
-		1, 1, 0
+		1, 1, 0,
+		0, 0, 0
 	};
 
 	private static int[] L_LEFT_MAP = {
-		0, 1, 0,
-		0, 1, 0,
-		1, 1, 0
+		1, 0, 0,
+		1, 1, 1,
+		0, 0, 0
 	};
 
 	private static int[] L_RIGHT_MAP = {
-		0, 1, 0,
-		0, 1, 0,
-		0, 1, 1
+		0, 0, 1,
+		1, 1, 1,
+		0, 0, 0
 	};
 
 	private static int[] CROSS_MAP = {
 		0, 1, 0,
-		0, 1, 1,
-		0, 1, 0
+		1, 1, 1,
+		0, 0, 0
 	};
 
 	private static int[] STRAIGHT_MAP = {
-		0, 1, 0, 0,
-		0, 1, 0, 0,
-		0, 1, 0, 0,
-		0, 1, 0, 0
+		0, 0, 0, 0,
+		1, 1, 1, 1,
+		0, 0, 0, 0,
+		0, 0, 0, 0
 	};
 
 	private static int[] SQUARE_MAP = {
@@ -73,9 +73,8 @@ public class Tetromino {
 	private TetrisBoard board;
 	private bool valid;
 
-	public Tetromino(int gridWidth, TetrisBoard board)
+	public Tetromino(int gridWidth, TetrisBoard board, int i)
 	{
-		int i = Random.Range (0, 7);
 		switch (i) {
 		case 0:
 			type = S_LEFT;
@@ -118,7 +117,7 @@ public class Tetromino {
 			column--;
 		}
 
-		height = 8;
+		height = gridWidth;
 		int thisHeight;
 		for (int x = column; x < column + type.width; x++) {
 			if (!HasColumn (x)) {
@@ -200,33 +199,35 @@ public class Tetromino {
 
 	private int index(int x, int y)
 	{
-		return type.map [x + y * type.width];
+		return type.map[x + y * type.width];
 	}
 
-	public int getMap(int x, int y) {
+	public int getMap(int x, int y)
+	{
 		int x2;
 		int y2;
 
-		switch (rotation) {
-		case 1:
-			x2 = y;
-			y2 = type.width - x - 1;
-			break;
-		case 2:
-			x2 = type.width - x - 1;
-			y2 = type.width - y - 1;
-			break;
-		case 3:
-			x2 = type.width - y - 1;
-			y2 = x;
-			break;
-		default:
-			x2 = x;
-			y2 = y;
-			break;
+		switch (rotation)
+		{
+			case 1:
+				x2 = y;
+				y2 = type.width - x - 1;
+				break;
+			case 2:
+				x2 = type.width - x - 1;
+				y2 = type.width - y - 1;
+				break;
+			case 3:
+				x2 = type.width - y - 1;
+				y2 = x;
+				break;
+			default:
+				x2 = x;
+				y2 = y;
+				break;
 		}
 
-		return index (x2, y2);
+		return index(x2, y2);
 	}
 
 	public List<IntPair> GetTileCoordinates()
@@ -235,7 +236,7 @@ public class Tetromino {
 		List<IntPair> list = new List<IntPair> ();
 		for (int y = 0; y < type.width; y++) {
 			for (int x = 0; x < type.width; x++) {
-				if (getMap (x, y) != 0) {
+				if (getMap(x, y) != 0) {
 					if (height + y < 0) {
 						valid = false;
 					} else {
